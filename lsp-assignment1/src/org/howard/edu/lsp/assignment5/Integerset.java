@@ -1,4 +1,4 @@
-package org.howard.edu.lsp.assignment4.implementation;
+package org.howard.edu.lsp.assignment5;
 
 import java.util.ArrayList;
 
@@ -142,7 +142,8 @@ public class Integerset {
     public void diff(Integerset intSetb) {
         for (int item : intSetb.getSet()) {
             if (this.contains(item)) {
-                this.set.remove(item);
+            	int index = this.set.indexOf(item);
+                this.set.remove(index);
             }
         }
     }

@@ -1,7 +1,6 @@
-package org.howard.edu.lsp.assignment5;
+package org.howard.edu.lsp.assignment4.implementation;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
@@ -51,26 +50,27 @@ class integersettestTest {
 	}
 	
 	@Test
-	public void toString() {
+	public void testtoString() {
 		Integerset set1 = new Integerset();
 		set1.add(50);
 		set1.add(100);
 		set1.add(150);
-		
-		String sumOutput = "50 100 150";
-		assertEquals(sumOutput, set1.toString());
+
+		assertEquals(" 50 100 150 ", set1.toString());
 	}
 	
 	@Test
-	public void remove() {
+	public void remove() throws Integersetexception {
 		Integerset set1 = new Integerset();
 		set1.add(50);
 		set1.add(75);
+		set1.add(100);
+		
+		set1.remove(50);
+		assertEquals(" 75, 100 ", set1.toString());
 		
 		set1.remove(75);
-		
-		String endVal = "50";
-		assertEquals(endVal, set1.remove);
+		assertEquals(" 100 ", set1.toString());
 	}
 	
 	@Test
@@ -95,8 +95,8 @@ class integersettestTest {
 		set1.add(3);
 		set1.add(6);
 		
-		String addedOutput = "3 6";
-		assertEquals(addedOutput, set1.add);
+		
+		assertEquals("3 6", set1.toString());
 		
 		
 	}
@@ -126,12 +126,14 @@ class integersettestTest {
 		set1.add(10);
 		set1.add(20);
 		set1.add(30);
-		set2.add(5);
 		set2.add(10);
 		set2.add(15);
 		set2.add(20);
 		
-		assertEquals("30", set1.toString());
+		set1.diff(set2);
+		
+		System.out.println(set1.toString());
+		assertEquals("30 15", set1.toString());
 		
 	}
 	
