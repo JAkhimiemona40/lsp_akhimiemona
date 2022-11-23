@@ -9,6 +9,12 @@ package org.howard.edu.lsp.assignment7;
 		
 	public interface AverageStrategy {
 
+	/**
+	 * 	
+	 * @param grades
+	 * @return
+	 * @throws EmptyListException
+	 */
 	  public static int compute(List<Integer> grades) throws EmptyListException {
 	     if (grades.size() == 0){
 	      throw new EmptyListException("Set is empty");
@@ -30,6 +36,12 @@ package org.howard.edu.lsp.assignment7;
 	    return gradeChange;
 	  };
 
+	/**
+	   * 
+	   * @param grades
+	   * @return
+	   * @throws EmptyListException
+	   */
 	  public static int computeWithoutLowestTwo(List<Integer> grades) throws EmptyListException {
 	    
 	    if (grades.size() == 0){
